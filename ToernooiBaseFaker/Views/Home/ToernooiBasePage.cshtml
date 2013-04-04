@@ -1,0 +1,12 @@
+﻿@model ToernooiBaseFaker.Models.ToernooiBaseHtml
+
+@{
+    ViewBag.Title = "ToernooiBaseHome";
+}
+@section CustomCss
+{
+   <link href="~/css/ToernooiBase.css" rel="stylesheet"/>
+}
+<h2>ToernooiBaseHome</h2>
+
+    @(new HtmlString(Model.Html));

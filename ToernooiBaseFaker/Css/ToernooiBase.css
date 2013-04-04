@@ -1,0 +1,62 @@
+﻿
+H4 {
+    color: #009933;
+    font-weight: bold;
+}
+
+H1 {
+    color: #b40000;
+    font-family: Arial;
+    font-size: 18pt;
+}
+
+
+body {
+    font-family: Arial;
+    background-color: #FFFFFF;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    background-repeat: no-repeat;
+    overflow: auto;
+    background-position: 0px 0px;
+    background-attachment: fixed;
+}
+
+table {
+    font-size: 9pt;
+    font-family: Arial;
+    color: #b40000;
+    margin-right: 4px;
+    margin-left: 4px;
+    color: #000000;
+    border-width: 0px;
+}
+
+td.trans {
+    filter: alpha(opacity=70);
+}
+
+td {
+    font-size: 9pt;
+    font-family: Arial;
+    color: #000000;
+}
+
+a:link {
+    color: black;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+a:hover {
+    color: black;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+a:visited {
+    color: black;
+    text-decoration: underline;
+    font-weight: bold;
+}
