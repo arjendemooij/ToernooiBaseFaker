@@ -35,17 +35,17 @@ namespace ToernooiBaseFaker.Controllers
 
         public ActionResult ToernooiBaseHome()
         {
-            return ToernooiBasePage("/opvraag/standen.php?taal=&kl=18&Id=3094&r=8&jr=13&afko=18&rondeweergave=8");
+            return View();
         }
 
-        public ActionResult ToernooiBasePage(string relativeUrl)
+        public string ToernooiBasePage(string relativeUrl, string linkFormat)
         {
             ToernooiBaseReader reader = new ToernooiBaseReader();
             ToernooiBaseParser parser = new ToernooiBaseParser();
 
-            ToernooiBaseHtml html = parser.ParseHtml(reader.GetToernooibaseHtml(relativeUrl), HttpUtility.UrlDecode(relativeUrl));
+            ToernooiBaseHtml html = parser.ParseHtml(reader.GetToernooibaseHtml(relativeUrl), HttpUtility.UrlDecode(relativeUrl),  HttpUtility.UrlDecode(linkFormat));
 
-            return View("ToernooiBasePage", html);
+            return html.Html;
         }
 
         

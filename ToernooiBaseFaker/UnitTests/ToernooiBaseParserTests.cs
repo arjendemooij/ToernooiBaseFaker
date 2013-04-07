@@ -19,7 +19,7 @@ namespace ToernooiBaseFaker.UnitTests
 
             string relativeUrl = "/opvraag/standen.php?taal=&kl=18&Id=3094&r=8&jr=13&afko=18&rondeweergave=8";
 
-            ToernooiBaseHtml html = parser.ParseHtml(reader.GetToernooibaseHtml(relativeUrl), relativeUrl);
+            ToernooiBaseHtml html = parser.ParseHtml(reader.GetToernooibaseHtml(relativeUrl), relativeUrl, "{0}");
 
             Assert.IsFalse(html.Html.Contains("<body"));
 
@@ -37,7 +37,7 @@ namespace ToernooiBaseFaker.UnitTests
             HtmlDocument document = new HtmlDocument();
             document.LoadHtml(html);
 
-            parser.ParseHtml(html, relativeUrl);
+            parser.ParseHtml(html, relativeUrl, "0");
         }
 
        

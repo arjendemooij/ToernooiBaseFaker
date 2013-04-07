@@ -8,6 +8,28 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{61FA24
 		.nuget\packages.config = .nuget\packages.config
 	EndProjectSection
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "TestToernooiBaseFakerUsage", "http://localhost:55056", "{A349ADAC-431A-4B8F-9E27-F067431A560A}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_55056"
+		Debug.AspNetCompiler.PhysicalPath = "TestToernooiBaseFakerUsage\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_55056\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_55056"
+		Release.AspNetCompiler.PhysicalPath = "TestToernooiBaseFakerUsage\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_55056\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "TestToernooiBaseFakerUsage\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,6 +40,10 @@ Global
 		{7063366F-AC54-4122-AE7F-D62B77C8A5EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7063366F-AC54-4122-AE7F-D62B77C8A5EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7063366F-AC54-4122-AE7F-D62B77C8A5EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A349ADAC-431A-4B8F-9E27-F067431A560A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A349ADAC-431A-4B8F-9E27-F067431A560A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A349ADAC-431A-4B8F-9E27-F067431A560A}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{A349ADAC-431A-4B8F-9E27-F067431A560A}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -11,7 +11,7 @@ namespace ToernooiBaseFaker.Controllers.Business
 {
     public class ToernooiBaseParser
     {
-        public ToernooiBaseHtml ParseHtml(string html, string currentUrl)
+        public ToernooiBaseHtml ParseHtml(string html, string toernooiBaseRelativeUrl, string generatedToernooiBaseUrlFormat)
         {
             html = FixMissingRowTags(html);
 
@@ -19,7 +19,7 @@ namespace ToernooiBaseFaker.Controllers.Business
             document.LoadHtml(html);
 
             FixImageSources(document);
-            FixLinkUrls(currentUrl, document);
+            FixLinkUrls(toernooiBaseRelativeUrl, generatedToernooiBaseUrlFormat, document);
 
             HtmlNode body = document.DocumentNode.SelectSingleNode("//body");
             return new ToernooiBaseHtml(body.InnerHtml);
@@ -33,7 +33,7 @@ namespace ToernooiBaseFaker.Controllers.Business
             return html;
         }
 
-        private void FixLinkUrls(string currentUrl, HtmlDocument document)
+        private void FixLinkUrls(string toernooiBaseRelativeUrl, string generatedToernooiBaseUrlFormat, HtmlDocument document)
         {
             foreach (HtmlNode link in document.DocumentNode.Descendants("a"))
             {
@@ -59,10 +59,10 @@ namespace ToernooiBaseFaker.Controllers.Business
                     }
                     else
                     {
-                        relativeUrl = GetCurrentFolder(currentUrl) + strippedUrl;
+                        relativeUrl = GetCurrentFolder(toernooiBaseRelativeUrl) + strippedUrl;
                     }
 
-                    string newUrl = string.Format("/Home/ToernooiBasePage/?relativeUrl={0}", HttpUtility.UrlEncode(relativeUrl));
+                    string newUrl = string.Format(generatedToernooiBaseUrlFormat, HttpUtility.UrlEncode(relativeUrl));
 
                     link.SetAttributeValue("href", newUrl);
                 }
@@ -99,7 +99,14 @@ namespace ToernooiBaseFaker.Controllers.Business
         private string GetCurrentFolder(string currentUrl)
         {
             int lastSlashIndex = currentUrl.LastIndexOf(@"/");
-            return currentUrl.Substring(0, lastSlashIndex + 1);
+            string currentFolder = currentUrl.Substring(0, lastSlashIndex + 1);
+
+            if (string.IsNullOrEmpty(currentFolder))
+            {
+                currentFolder = "/";
+            }
+
+            return currentFolder;
         }
 
         public HtmlNode GetRecursiveNode(HtmlNode node, string name)
